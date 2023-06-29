@@ -1,0 +1,32 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      BUILD_CONFIG: 'Release'
+      SOLUTION: 'ArchitectProg.Persistence.EfCore.PostgreSQL.sln'
+      NUGET_API_KEY: ${{secrets.NUGET_API_KEY}}
+    steps:
+    - uses: actions/checkout@v3
+    - name: setup .net
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 7.0.x
+    - name: restore packages
+      run: dotnet restore
+    - name: build
+      if: success()
+      run: dotnet build $SOLUTION --configuration $BUILD_CONFIG --no-restore
+    - name: unit tests
+      if: success()
+      run: dotnet test --no-build --configuration $BUILD_CONFIG --verbosity normal
+    - name: publish
+      if: success()
+      run: dotnet nuget push **\*.nupkg --source 'https://api.nuget.org/v3/index.json' --api-key $NUGET_API_KEY

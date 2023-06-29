@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchitectProg.Persistence.EfCore.PostgreSQL", "ArchitectProg.Persistence.EfCore.PostgreSQL\ArchitectProg.Persistence.EfCore.PostgreSQL.csproj", "{79060C33-9745-434D-AB1C-ABE0CD08B405}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79060C33-9745-434D-AB1C-ABE0CD08B405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79060C33-9745-434D-AB1C-ABE0CD08B405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79060C33-9745-434D-AB1C-ABE0CD08B405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79060C33-9745-434D-AB1C-ABE0CD08B405}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
