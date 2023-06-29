@@ -8,7 +8,7 @@
         <RepositoryUrl>https://github.com/architect-prog/ArchitectProg.Persistence.EfCore.PostgreSQL</RepositoryUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-        <Version>1.0.0</Version>
+        <Version>1.0.1</Version>
         <Description>Implementation of repository, unit of work patterns for Npgsql.EfCore.</Description>
     </PropertyGroup>
 

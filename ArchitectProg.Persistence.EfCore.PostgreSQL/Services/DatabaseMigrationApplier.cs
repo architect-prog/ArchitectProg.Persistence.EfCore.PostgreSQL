@@ -1,4 +1,4 @@
-﻿using ArchitectProg.Persistence.EfCore.PostgreSQL.Interfaces;
+﻿using ArchitectProg.Persistence.EfCore.PostgreSQL.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 
