@@ -8,15 +8,15 @@
         <RepositoryUrl>https://github.com/architect-prog/ArchitectProg.Persistence.EfCore.PostgreSQL</RepositoryUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-        <Version>1.0.2</Version>
+        <Version>1.0.3</Version>
         <Description>Implementation of repository, unit of work patterns for Npgsql.EfCore.</Description>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="ArchitectProg.Kernel.Extensions" Version="2.0.16" />
-        <PackageReference Include="EFCore.NamingConventions" Version="7.0.2" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.8" />
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
+        <PackageReference Include="ArchitectProg.Kernel.Extensions" Version="2.0.18"/>
+        <PackageReference Include="EFCore.NamingConventions" Version="7.0.2"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.8"/>
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4"/>
     </ItemGroup>
 
     <ItemGroup>
