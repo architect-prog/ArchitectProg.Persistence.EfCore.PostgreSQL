@@ -18,20 +18,18 @@ public sealed class UnitOfWork : IUnitOfWork
         transaction = currentTransaction ?? context.Database.BeginTransaction(IsolationLevel.ReadCommitted);
     }
 
-    public async Task Commit()
+    public Task Commit()
     {
-        if (isNestedTransaction)
-            return;
-
-        await transaction.CommitAsync();
+        return isNestedTransaction
+            ? Task.CompletedTask
+            : transaction.CommitAsync();
     }
 
-    public async Task Rollback()
+    public Task Rollback()
     {
-        if (isNestedTransaction)
-            return;
-
-        await transaction.RollbackAsync();
+        return isNestedTransaction
+            ? Task.CompletedTask
+            : transaction.RollbackAsync();
     }
 
     public void Dispose()

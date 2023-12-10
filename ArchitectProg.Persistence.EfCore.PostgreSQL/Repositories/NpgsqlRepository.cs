@@ -5,16 +5,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ArchitectProg.Persistence.EfCore.PostgreSQL.Repositories;
 
-public sealed class EntityFrameworkRepository<T> : IRepository<T> where T : class
+public sealed class NpgsqlRepository<T>(DbContext context) : IRepository<T>
+    where T : class
 {
-    private readonly DbContext context;
-    private readonly DbSet<T> entitiesSet;
-
-    public EntityFrameworkRepository(DbContext context)
-    {
-        this.context = context;
-        entitiesSet = context.Set<T>();
-    }
+    private readonly DbSet<T> entitiesSet = context.Set<T>();
 
     public async Task Add(T entity, CancellationToken token = default)
     {

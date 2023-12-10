@@ -4,15 +4,8 @@ using Npgsql;
 
 namespace ArchitectProg.Persistence.EfCore.PostgreSQL.Services;
 
-public sealed class DatabaseMigrationApplier : IDatabaseMigrationApplier
+public sealed class DatabaseMigrationApplier(DbContext context) : IDatabaseMigrationApplier
 {
-    private readonly DbContext context;
-
-    public DatabaseMigrationApplier(DbContext context)
-    {
-        this.context = context;
-    }
-
     public void ApplyMigrations()
     {
         context.Database.Migrate();

@@ -4,18 +4,11 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace ArchitectProg.Persistence.EfCore.PostgreSQL.Services;
 
-public sealed class UnitOfWorkFactory : IUnitOfWorkFactory
+public sealed class UnitOfWorkFactory(IServiceProvider provider) : IUnitOfWorkFactory
 {
-    private readonly IServiceProvider serviceProvider;
-
-    public UnitOfWorkFactory(IServiceProvider serviceProvider)
-    {
-        this.serviceProvider = serviceProvider;
-    }
-
     public IUnitOfWork BeginTransaction()
     {
-        var dbContext = serviceProvider.GetRequiredService<DbContext>();
+        var dbContext = provider.GetRequiredService<DbContext>();
         var result = new UnitOfWork(dbContext);
         return result;
     }
